@@ -1,0 +1,25 @@
+package com.application.topics.topics;
+
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+@Service
+public class TopicService {
+    List<Topic> topics =new ArrayList<>( Arrays.asList(
+                new Topic("backend","spring-boot-description","spring-boot"),
+                new Topic("fullstack","spring-boot-description","spring-boot"),
+                new Topic("frontend","spring-boot-description","spring-boot")
+        ));
+    public List<Topic> getAllTopics(){
+        return topics;
+    }
+    public Topic getTopic(String id){
+        return topics.stream().filter(t -> t.getId().equals(id)).findFirst().orElse(null);
+    }
+    public void addTopic(Topic topic){
+        topics.add(topic);
+    }
+}
