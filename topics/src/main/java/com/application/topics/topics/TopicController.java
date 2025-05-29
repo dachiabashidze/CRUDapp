@@ -15,6 +15,7 @@ public class TopicController {
     public List<Topic> getAllTopics(){
         return topicService.getAllTopics();
     }
+
     @GetMapping("/topics/{id}")
     public Topic getTopic(@PathVariable String id){
         return topicService.getTopic(id);
@@ -23,5 +24,10 @@ public class TopicController {
     @PostMapping("/topics")
     public void addTopic(@RequestBody Topic topic){
         topicService.addTopic(topic);
+    }
+
+    @PutMapping("/topics/{id}")
+    public void updateTopic(@RequestBody Topic topic, @PathVariable String id){
+        topicService.updateTopic(id,topic);
     }
 }
