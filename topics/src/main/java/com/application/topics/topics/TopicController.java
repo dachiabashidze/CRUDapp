@@ -9,9 +9,12 @@ import java.util.Optional;
 
 @RestController
 public class TopicController {
-    @Autowired
-    private TopicService topicService;
 
+    private final TopicService topicService;
+
+    public TopicController(TopicService topicService){
+        this.topicService=topicService;
+    }
     @GetMapping("/topics")
     public List<Topic> getAllTopics(){
         return topicService.getAllTopics();

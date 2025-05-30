@@ -10,10 +10,12 @@ import java.util.Optional;
 
 @Service
 public class TopicService {
-    @Autowired
-    private TopicRepository topicRepository;
 
+    private final TopicRepository topicRepository;
 
+    public TopicService(TopicRepository topicRepository){
+        this.topicRepository = topicRepository;
+    }
     public List<Topic> getAllTopics() {
 
         List<Topic> topics = new ArrayList<>();
