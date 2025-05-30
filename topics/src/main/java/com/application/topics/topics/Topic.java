@@ -1,6 +1,11 @@
 package com.application.topics.topics;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Topic {
+    @Id
     String id;
     String course;
     String description;
