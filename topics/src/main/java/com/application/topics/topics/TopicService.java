@@ -12,11 +12,7 @@ import java.util.Optional;
 public class TopicService {
     @Autowired
     private TopicRepository topicRepository;
-    List<Topic> topics = new ArrayList<>(Arrays.asList(
-            new Topic("backend", "spring-boot-description", "spring-boot"),
-            new Topic("fullstack", "spring-boot-description", "spring-boot"),
-            new Topic("frontend", "spring-boot-description", "spring-boot")
-    ));
+
 
     public List<Topic> getAllTopics() {
 
